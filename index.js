@@ -1,5 +1,4 @@
 const express = require('express');
-const logger = require('morgan');
 const cors = require('cors');
 const createError = require('http-errors');
 const helmet = require('helmet');
@@ -22,9 +21,9 @@ app.use(express.json({ limit: '50mb', extended: true }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Show routes called in console during development
-if (process.env.NODE_ENV === 'development') {
+/*if (process.env.NODE_ENV === 'development') {
 	app.use(logger('dev'));
-}
+}*/
 
 // Security
 if (process.env.NODE_ENV === 'production') {
