@@ -7,7 +7,7 @@ const app = express();
 
 
 const corsOption = {
-	origin: process.env.NODE_ENV==='production' ? 'https://gogata.vercel.app':'http://localhost:4200',
+	origin: process.env.NODE_ENV==='production' ? 'https://gogata.vercel.app':'http://localhost:3000',
     optionsSuccessStatus: 200,
     credentials: true
 }
@@ -16,6 +16,7 @@ const PORT = process.env.PORT || 4000
 //Connect DB 
 DB()
 
+app.use(cors(corsOption))
 app.use(express.json({ limit: '50mb', extended: true }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
