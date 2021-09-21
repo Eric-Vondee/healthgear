@@ -1,7 +1,9 @@
 name: Deploy
 
 on:
-  push: [main] # Changing the branch here would also work
+  push:
+    branches:
+      [main] # Changing the branch here would also work
 
 jobs:
   build:
